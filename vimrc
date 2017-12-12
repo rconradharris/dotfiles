@@ -12,12 +12,6 @@ syntax on
 """ Desert omits a dark blue so is nice for darkbg 
 colorscheme desert
 
-""" Cursorline highlighting
-set cursorline
-hi CursorLine cterm=NONE ctermbg=blue ctermfg=white guibg=blue guifg=white
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
 set visualbell
 
 """ Scripting language defaults
@@ -73,16 +67,7 @@ map ,gb :!git blame %<CR>
 map ,bt :!ctags -o .tags -R .<CR>
 set tags=.tags
 
-""" TODO file
-map ,td :new ~/Documents/TODO<CR>
-map ,id :new ~/Documents/IDEAS<CR>
-map ,me :new ~/Documents/MEALS<CR>
-map ,sc :new ~/Documents/work/scratchpad.txt<CR>
-
-""" Insert Timestamp/Date
-map ,ts :r! date +"\%Y-\%m-\%d \%H:\%M:\%S"<CR>
-
-""" Standup Notes
+""" STANDUP Notes
 nmap ,st :new ~/Documents/work/STANDUP<CR>
 nmap ,dt :r! date +"\%Y-\%m-\%d"<CR>$"="\nPENDING\n\n\n\nBLOCKED\n\n\n\nDONE\n\n"<CR>pjjj"="- "<CR>pA
 
@@ -99,3 +84,7 @@ cnoremap jj <C-c>
 """ Disable backups and swap file. Mostly working in a git tree anyway.
 set nobackup
 set noswapfile
+
+"""Spell checking
+nmap ,sp :setlocal spell spelllang=en_us<CR>
+nmap ,nsp :setlocal nospell<CR>
