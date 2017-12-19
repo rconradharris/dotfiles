@@ -2,6 +2,8 @@
 # Bail out if we're not an interactive session...
 [ -z "$PS1" ] && return
 
+export PATH=$PATH:~/bin
+
 # Aliases
 alias ls='ls -G'
 alias cdcode="cd ~/Documents/code"
