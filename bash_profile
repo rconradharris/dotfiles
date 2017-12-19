@@ -5,6 +5,7 @@
 # Aliases
 alias ls='ls -G'
 alias cdcode="cd ~/Documents/code"
+alias cdicloud="cd ~/iCloud"
 alias ppjson="python -mjson.tool" 
 alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
 
