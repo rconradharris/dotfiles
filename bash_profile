@@ -2,7 +2,15 @@
 # Bail out if we're not an interactive session...
 [ -z "$PS1" ] && return
 
-export PATH=$PATH:~/bin
+# PATH management
+# http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
+pathinsert() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1:$PATH"
+    fi
+}
+pathinsert ~/bin
+pathinsert ~/Documents/code/thirdparty/connectiq-sdk-mac-2.4.1/bin
 
 # Aliases
 alias ls='ls -G'
@@ -18,13 +26,13 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 # Bash completion
-[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+which brew > /dev/null && [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 
 # Custom functions
 
 # Print size of directories 1 level deep
 function dirsize() {
-    du -h -d1 "$@" | gsort -h
+    du -h -d1 "$@" | sort -h
 }
 
 # Source all *.bash or *.sh files (recursively) in the ~/.bashrc.d directory
