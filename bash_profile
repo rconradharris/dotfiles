@@ -10,12 +10,13 @@ pathinsert() {
     fi
 }
 pathinsert ~/bin
+pathinsert ~/Documents/code/simpledot
 pathinsert ~/Documents/code/thirdparty/connectiq-sdk-mac-2.4.1/bin
 
 # Aliases
 alias ls='ls -G'
+alias cddoc="cd ~/Documents"
 alias cdcode="cd ~/Documents/code"
-alias cdicloud="cd ~/iCloud"
 alias ppjson="python -mjson.tool" 
 alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
 
