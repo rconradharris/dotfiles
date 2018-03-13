@@ -11,14 +11,16 @@ pathinsert() {
 }
 pathinsert ~/bin
 pathinsert ~/Documents/code/simpledot
-pathinsert ~/Documents/code/thirdparty/connectiq-sdk-mac-2.4.1/bin
+pathinsert ~/Documents/code/thirdparty/connectiq-sdk-mac-2.4.2/bin
 
 # Aliases
 alias ls='ls -G'
-alias cddoc="cd ~/Documents"
 alias cdcode="cd ~/Documents/code"
+alias cddoc="cd ~/Documents"
+alias cdicloud="cd ~/iCloud"
 alias ppjson="python -mjson.tool" 
 alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # History control
 HISTCONTROL=ignoredups:ignorespace
@@ -43,3 +45,16 @@ if [[ -d ~/.bashrc.d ]]; then
     done
     unset f
 fi
+
+
+# Only execute pythonrc for interactive sessions (where `python` was run
+# without arguments)
+#
+# Credit: https://chezsoi.org/lucas/blog/command-history-in-a-python-3-virtualenv.html
+python () {
+    if [ "$#" -eq 0 ]; then
+        PYTHONSTARTUP=~/.pythonrc $(type -P python)
+    else
+        $(type -P python) "$@"
+    fi
+}

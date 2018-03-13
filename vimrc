@@ -64,11 +64,12 @@ map ,gdd :!git diff<CR>
 map ,gb :!git blame %<CR>
 
 """ ctags
-map ,bt :!ctags -o .tags -R .<CR>
+map ,bt :!/usr/local/bin/ctags --exclude=.git -f .tags -R .<CR>
 set tags=.tags
 
 """ STANDUP Notes
-nmap ,st :new ~/Documents/work/STANDUP<CR>
+nmap ,id :new ~/Documents/code/Notes/IDEAS<CR>
+nmap ,st :new ~/Documents/code/Notes/STANDUP<CR>
 nmap ,dt :r! date +"\%Y-\%m-\%d"<CR>$"="\nPENDING\n\n\n\nBLOCKED\n\n\n\nDONE\n\n"<CR>pjjj"="- "<CR>pA
 
 """ Remove toolbar in MacVim
