@@ -12,20 +12,10 @@ syntax on
 """ Desert omits a dark blue so is nice for darkbg 
 colorscheme desert
 
+""" When deleting a softtab, delete a shiftwidth number of spaces
+set smarttab
+
 set visualbell
-
-""" Scripting language defaults
-set expandtab
-set textwidth=78
-set wrap
-
-""" Python Convention
-set shiftwidth=4
-set tabstop=4
-
-""" Guess indentation level (when pasting text use :set pastemode)
-set autoindent
-set smartindent
 
 """ Highlight the tokens that match the search
 set hlsearch
@@ -50,9 +40,6 @@ set showmatch
 
 """ Show line and column numbers
 set ruler
-
-""" When deleting a softtab, delete a shiftwidth number of spaces
-set smarttab
 
 """ Reload/edit vimrc easily
 map ,rv :so ~/.vimrc<CR>
@@ -89,3 +76,13 @@ set noswapfile
 """Spell checking
 nmap ,sp :setlocal spell spelllang=en_us<CR>
 nmap ,nsp :setlocal nospell<CR>
+
+"""Standard whitespace handling
+set expandtab
+set ts=4
+set sw=4
+
+""" Per-language settings
+autocmd FileType python setlocal tw=78 wrap autoindent smartindent
+autocmd FileType html setlocal ts=2 sw=2
+autocmd FileType htmldjango setlocal ts=2 sw=2
