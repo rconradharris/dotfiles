@@ -1,4 +1,4 @@
-REM dotfiles @ ~/setup.cmd
+REM dotfile @ ~/setup.cmd
 @echo off
  
 setlocal
