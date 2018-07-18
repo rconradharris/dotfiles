@@ -2,6 +2,9 @@
 # Bail out if we're not an interactive session...
 [ -z "$PS1" ] && return
 
+which brew > /dev/null
+WHICH_BREW=$?
+
 # PATH management
 # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
 pathinsert() {
@@ -15,13 +18,19 @@ pathinsert ~/Documents/code/thirdparty/connectiq-sdk-mac-2.4.2/bin
 pathinsert /usr/local/opt/go/libexec/bin
 
 # Aliases
-alias ls='ls -G'
 alias cdcode="cd ~/Documents/code"
 alias cddoc="cd ~/Documents"
 alias cdicloud="cd ~/iCloud"
 alias ppjson="python -mjson.tool" 
 alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
-alias ctags="`brew --prefix`/bin/ctags"
+if [[ $WHICH_BREW = 0 ]]; then
+    # Mac
+    alias ls='ls -G'
+    alias ctags="`brew --prefix`/bin/ctags"
+else
+    alias ls='ls --color'
+    alias grep='grep --color'
+fi
 
 # History control
 HISTCONTROL=ignoredups:ignorespace
@@ -30,7 +39,9 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 # Bash completion
-which brew > /dev/null && [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+if [[ $WHICH_BREW = 0 ]]; then
+    [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+fi
 
 # Custom functions
 
@@ -59,3 +70,8 @@ python () {
         $(type -P python) "$@"
     fi
 }
+
+# Bash on Windows does not currently apply umask correctly
+if [ "$(umask)" == "0000" ]; then
+    umask 022
+fi
