@@ -14,7 +14,7 @@ pathinsert() {
 }
 pathinsert ~/bin
 pathinsert ~/Documents/code/simpledot
-pathinsert ~/Documents/code/thirdparty/connectiq-sdk-mac-2.4.2/bin
+pathinsert /usr/local/opt/rabbitmq/sbin
 pathinsert /usr/local/opt/go/libexec/bin
 
 # Aliases
