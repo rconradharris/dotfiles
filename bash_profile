@@ -23,14 +23,9 @@ alias cddoc="cd ~/Documents"
 alias cdicloud="cd ~/iCloud"
 alias ppjson="python -mjson.tool" 
 alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
-if [[ $WHICH_BREW = 0 ]]; then
-    # Mac
-    alias ls='ls -G'
-    alias ctags="`brew --prefix`/bin/ctags"
-else
-    alias ls='ls --color'
-    alias grep='grep --color'
-fi
+
+# Colorize ls
+export CLICOLOR=1
 
 # History control
 HISTCONTROL=ignoredups:ignorespace
