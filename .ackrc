@@ -1,4 +1,3 @@
-# dotfile @ ~/.ackrc
 --ignore-ack-defaults
 --ignore-directory=is:.bzr
 --ignore-directory=is:.cdv

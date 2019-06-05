@@ -1,6 +1,0 @@
-# dotfile @ ~/.ssh/config
-Host irc
-    Hostname irc.rconradharris.com
-    User rick
-    PermitLocalCommand yes
-    LocalCommand ~/bin/client-irc-notifier start

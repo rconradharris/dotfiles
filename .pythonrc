@@ -1,4 +1,3 @@
-# dotfile @ ~/.pythonrc
 import atexit, os, readline, sys
 if sys.version_info >= (3, 0) and hasattr(sys, 'real_prefix'): # in a VirtualEnv
     PYTHON_HISTORY_FILE = os.path.join(os.environ['HOME'], '.python_history')

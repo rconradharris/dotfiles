@@ -1,4 +1,3 @@
-""" dotfile @ ~/.vimrc
 set rtp+=/usr/local/go/misc/vim
 
 filetype plugin indent on

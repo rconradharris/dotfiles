@@ -1,4 +1,3 @@
-# dotfile @ ~/.bash_profile
 # Bail out if we're not an interactive session...
 [ -z "$PS1" ] && return
 
