@@ -82,6 +82,7 @@ set ts=4
 set sw=4
 
 """ Per-language settings
-autocmd FileType python setlocal tw=78 wrap autoindent smartindent
+autocmd FileType css setlocal ts=2 sw=2
 autocmd FileType html setlocal ts=2 sw=2
 autocmd FileType htmldjango setlocal ts=2 sw=2
+autocmd FileType python setlocal tw=78 wrap autoindent smartindent
