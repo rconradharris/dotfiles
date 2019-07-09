@@ -1,9 +1,6 @@
 # Bail out if we're not an interactive session...
 [ -z "$PS1" ] && return
 
-which brew > /dev/null
-WHICH_BREW=$?
-
 # PATH management
 # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
 pathinsert() {
@@ -12,7 +9,6 @@ pathinsert() {
     fi
 }
 pathinsert ~/bin
-pathinsert ~/Documents/code/simpledot
 pathinsert /usr/local/opt/rabbitmq/sbin
 pathinsert /usr/local/opt/go/libexec/bin
 
@@ -33,7 +29,8 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 # Bash completion
-if [[ $WHICH_BREW = 0 ]]; then
+which brew > /dev/null
+if [[ $? = 0 ]]; then
     [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 fi
 
