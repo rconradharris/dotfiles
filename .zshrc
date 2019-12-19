@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export BOOTSTRAP_MAC="/Users/rick/Documents/code/bootstrap-mac"
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/rick/.oh-my-zsh"
+export ZSH="$BOOTSTRAP_MAC/submodules/ohmyzsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -95,5 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cdcode="cd ~/Documents/code"
+alias cddoc="cd ~/Documents"
+alias cdicloud="cd ~/iCloud"
+alias ppjson="python -mjson.tool"
+alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
