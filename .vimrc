@@ -51,6 +51,7 @@ map ,gb :!git blame %<CR>
 
 """ ctags
 map ,bt :!/usr/local/bin/ctags --exclude=.git -f .tags -R .<CR>
+map ,gt :!gotags -f .tags -R .<CR>
 set tags=.tags
 
 """ STANDUP Notes
@@ -82,7 +83,10 @@ set ts=4
 set sw=4
 
 """ Per-language settings
+autocmd FileType yaml setlocal ts=2 sw=2
+autocmd FileType json setlocal ts=2 sw=2
 autocmd FileType css setlocal ts=2 sw=2
 autocmd FileType html setlocal ts=2 sw=2
 autocmd FileType htmldjango setlocal ts=2 sw=2
 autocmd FileType python setlocal tw=78 wrap autoindent smartindent
+autocmd FileType go setlocal noexpandtab autoindent smartindent
