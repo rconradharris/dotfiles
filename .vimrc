@@ -88,5 +88,5 @@ autocmd FileType json setlocal ts=2 sw=2
 autocmd FileType css setlocal ts=2 sw=2
 autocmd FileType html setlocal ts=2 sw=2
 autocmd FileType htmldjango setlocal ts=2 sw=2
-autocmd FileType python setlocal tw=78 wrap autoindent smartindent
+autocmd FileType python setlocal tw=120 ts=4 sw=4 wrap autoindent smartindent
 autocmd FileType go setlocal noexpandtab autoindent smartindent

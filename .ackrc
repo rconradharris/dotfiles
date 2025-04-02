@@ -1,6 +1,8 @@
 --ignore-ack-defaults
 --ignore-directory=is:vendor
 --ignore-directory=is:.bzr
+--ignore-directory=is:.venv
+--ignore-directory=is:.mypy_cache
 --ignore-directory=is:.cdv
 --ignore-directory=is:~.dep
 --ignore-directory=is:~.dot
