@@ -90,3 +90,14 @@ autocmd FileType html setlocal ts=2 sw=2
 autocmd FileType htmldjango setlocal ts=2 sw=2
 autocmd FileType python setlocal tw=120 ts=4 sw=4 wrap autoindent smartindent
 autocmd FileType go setlocal noexpandtab autoindent smartindent
+
+
+""" Get-Things-Done Flow
+inoremap ,,chk ✅ 
+nnoremap ,,chk i✅<Esc>
+
+inoremap ,,wip 🛠️ 
+nnoremap ,,wip i🛠️<Esc>
+
+inoremap ,,blk ⛔ 
+nnoremap ,,blk i⛔<Esc>
