@@ -110,3 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cdcode="~/code"
 alias cddoc="~/Documents"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/rick/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
